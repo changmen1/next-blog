@@ -32,12 +32,20 @@ export default async function BlogPage({ searchParams }: BlogPageProps) {
         <div className="flex-1 space-y-4">
           <h1 className="inline-block font-black text-4xl lg:text-5xl">Blog</h1>
           <p className="text-xl text-muted-foreground">
-            My ramblings on all things web dev.
+            筹划中,暂时没想好,放只我家妹妹吧😽.
           </p>
         </div>
       </div>
       <div className="grid grid-cols-12 gap-3 mt-8">
-        <div className="col-span-12 col-start-1 sm:col-span-8">
+        <img
+          src="/cat.jpg"
+          alt=""
+          className="min-w-96 col-span-12 col-start-1 sm:col-span-8"
+        />
+        <div className="col-span-12 row-start-3 h-fit sm:col-span-4 sm:col-start-9 sm:row-start-1">
+          未完待续......
+        </div>
+        {/* <div className="col-span-12 col-start-1 sm:col-span-8">
           <hr />
           {displayPosts?.length > 0 ? (
             <ul className="flex flex-col">
@@ -66,7 +74,7 @@ export default async function BlogPage({ searchParams }: BlogPageProps) {
           </CardHeader>
           <CardContent className="flex flex-wrap gap-2">
           </CardContent>
-        </Card>
+        </Card> */}
       </div>
     </div>
   );
