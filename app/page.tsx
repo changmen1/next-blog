@@ -88,7 +88,7 @@ export default function Home() {
           <div className="flex flex-col gap-4 justify-center sm:flex-row">
             <Link
               href="/blog"
-              className={cn(buttonVariants({ size: "lg" }), "w-full sm:w-fit")}
+              className={cn(buttonVariants({ size: "lg" }), "w-full sm:w-fit","border-2 border-black")}
             >
               View my blog
             </Link>
@@ -98,7 +98,8 @@ export default function Home() {
               rel="noreferrer"
               className={cn(
                 buttonVariants({ variant: "outline", size: "lg" }),
-                "w-full sm:w-fit"
+                "w-full sm:w-fit",
+                "border-2 border-black"
               )}
             >
               GitHub
