@@ -4,22 +4,17 @@ import { Metadata } from "next";
 import "./page.css";
 
 export const metadata: Metadata = {
-  title: "My blog",
+  title: "My detail",
   description: "This is a description",
 };
 
-const POSTS_PER_PAGE = 5;
-
-interface BlogPageProps {
+interface DeatilPageProps {
   searchParams: {
     page?: string;
   };
 }
 
-export default async function BlogPage({ searchParams }: BlogPageProps) {
-  const currentPage = Number(searchParams?.page) || 1;
-  const sortedPosts = sortPosts(posts.filter((post) => post.published));
-
+export default async function BlogPage({ searchParams }: DeatilPageProps) {
   return (
     <div className="container max-w-4xl py-6 lg:py-10">
       <div className="flex flex-col items-start gap-4 md:flex-row md:justify-between md:gap-8">
@@ -30,7 +25,7 @@ export default async function BlogPage({ searchParams }: BlogPageProps) {
           </p>
         </div>
       </div>
-      {/* <div className="grid grid-cols-12 gap-3 mt-8">
+      <div className="grid grid-cols-12 gap-3 mt-8">
         <img
           src="/cat.jpg"
           alt=""
@@ -39,20 +34,6 @@ export default async function BlogPage({ searchParams }: BlogPageProps) {
         <div className="col-span-12 row-start-3 h-fit sm:col-span-4 sm:col-start-9 sm:row-start-1">
           未完待续......
         </div>
-      </div> */}
-      <div className="gallery">
-        <img
-          src="/img10.jpg"
-        ></img>
-        <img src="/img2.jpg" alt="mimi"></img>
-        <img src="/img3.jpg" alt="mimi"></img>
-        <img src="/img4.jpg" alt="mimi"></img>
-        <img src="/img1.jpg" alt="mimi"></img>
-        <img src="/img5.jpg" alt="mimi"></img>
-        <img src="/img6.jpg" alt="mimi"></img>
-        <img src="/img7.jpg" alt="mimi"></img>
-        <img src="/img8.jpg" alt="mimi"></img>
-        <img src="/img9.jpg" alt="mimi"></img>
       </div>
     </div>
   );
