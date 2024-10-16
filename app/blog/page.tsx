@@ -1,6 +1,6 @@
 import { Metadata } from "next";
-import "./page.css";
-import Image from 'next/image';
+import Image from "next/image";
+import './page.module.css';
 
 export const metadata: Metadata = {
   title: "My blog",
@@ -25,66 +25,16 @@ export default async function BlogPage({ searchParams }: BlogPageProps) {
         </div>
       </div>
       <div className="gallery">
-        <Image
-          src="/img10.jpg"
-          alt="description"
-          width={350}
-          height={300}
-        />
-        <Image
-          src="/img2.jpg"
-          alt="description"
-          width={350}
-          height={300}
-        />
-        <Image
-          src="/img3.jpg"
-          alt="description"
-          width={350}
-          height={300}
-        />
-        <Image
-          src="/img4.jpg"
-          alt="description"
-          width={350}
-          height={300}
-        />
-        <Image
-          src="/img1.jpg"
-          alt="description"
-          width={350}
-          height={300}
-        />
-        <Image
-          src="/img5.jpg"
-          alt="description"
-          width={350}
-          height={300}
-        />
-        <Image
-          src="/img6.jpg"
-          alt="description"
-          width={350}
-          height={300}
-        />
-        <Image
-          src="/img7.jpg"
-          alt="description"
-          width={350}
-          height={300}
-        />
-        <Image
-          src="/img8.jpg"
-          alt="description"
-          width={350}
-          height={300}
-        />
-        <Image
-          src="/img9.jpg"
-          alt="description"
-          width={350}
-          height={300}
-        />
+        <Image src="/img10.jpg" alt="description" width={350} height={300} />
+        <Image src="/img2.jpg" alt="description" width={350} height={300} />
+        <Image src="/img3.jpg" alt="description" width={350} height={300} />
+        <Image src="/img4.jpg" alt="description" width={350} height={300} />
+        <Image src="/img1.jpg" alt="description" width={350} height={300} />
+        <Image src="/img5.jpg" alt="description" width={350} height={300} />
+        <Image src="/img6.jpg" alt="description" width={350} height={300} />
+        <Image src="/img7.jpg" alt="description" width={350} height={300} />
+        <Image src="/img8.jpg" alt="description" width={350} height={300} />
+        <Image src="/img9.jpg" alt="description" width={350} height={300} />
       </div>
     </div>
   );

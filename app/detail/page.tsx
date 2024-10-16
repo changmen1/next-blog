@@ -1,7 +1,4 @@
-import { posts } from "#site/content";
-import { sortPosts } from "@/lib/utils";
 import { Metadata } from "next";
-import "./page.css";
 
 export const metadata: Metadata = {
   title: "My detail",
