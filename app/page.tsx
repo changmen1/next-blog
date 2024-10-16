@@ -7,16 +7,13 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import TrackVisibility from "react-on-screen";
-
+// @ts-ignore
+import confetti from "canvas-confetti";
 export default function Home() {
   const [text, setText] = useState("");
   const [delta, setDelta] = useState(300 - Math.random() * 100);
   const [loopNum, setLoopNum] = useState(0);
-  const toRotate = [
-    "web全栈开发",
-    "flutter APP开发",
-    "Tr/En 客户端开发",
-  ];
+  const toRotate = ["web全栈开发", "flutter APP开发", "Tr/En 客户端开发"];
   const [isDeleting, setIsDeleting] = useState(false);
   const [index, setIndex] = useState(1);
   const period = 2000;
@@ -46,6 +43,17 @@ export default function Home() {
       setIndex((prevIndex) => prevIndex + 1);
     }
   };
+  const handleConfetti = () => {
+    confetti({
+      particleCount: 100,
+      startVelocity: 30,
+      spread: 360,
+      origin: {
+        x: Math.random(),
+        y: Math.random() - 0.2,
+      },
+    });
+  };
   useEffect(() => {
     let ticker = setInterval(() => {
       tick();
@@ -60,7 +68,12 @@ export default function Home() {
       <section className="space-y-6 pb-8 pt-6 md:pb-12 md:mt-1 lg:py-32">
         <div className="container flex flex-col gap-4 text-center items-center">
           <Avatar className="w-23 h-32 rounded-full">
-            <AvatarImage src="/my.jpg" alt="@shadcn" className="object-cover" />
+            <AvatarImage
+              src="/my.jpg"
+              alt="@shadcn"
+              className="object-cover"
+              onClick={handleConfetti}
+            />
             <AvatarFallback>朱昕龙</AvatarFallback>
           </Avatar>
           <TrackVisibility>
@@ -78,8 +91,8 @@ export default function Home() {
             )}
           </TrackVisibility>
           <p className="text-xl text-muted-foreground">
-            在职web全栈开发者，擅长javaScript CSS React Electron Tauri Go java springBoot Dart
-            Flutter
+            在职web全栈开发者，擅长javaScript CSS React Electron Tauri Go java
+            springBoot Dart Flutter
           </p>
           <p className="max-w-[42rem] mx-auto text-muted-foreground sm:text-xl text-balance">
             欢迎来到我的个人网站😘。本网站使用tailwind、shadcn、velite 和 Nextjs
@@ -87,8 +100,15 @@ export default function Home() {
           </p>
           <div className="flex flex-col gap-4 justify-center sm:flex-row">
             <Link
+              onClick={() => {
+                confetti();
+              }}
               href="/blog"
-              className={cn(buttonVariants({ size: "lg" }), "w-full sm:w-fit","border-2 border-black")}
+              className={cn(
+                buttonVariants({ size: "lg" }),
+                "w-full sm:w-fit",
+                "border-2 border-black"
+              )}
             >
               View my blog
             </Link>

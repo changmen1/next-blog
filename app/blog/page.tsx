@@ -1,6 +1,6 @@
 import { Metadata } from "next";
 import Image from "next/image";
-import './page.module.css';
+import mystyles from "./page.module.css";
 
 export const metadata: Metadata = {
   title: "My blog",
@@ -24,7 +24,7 @@ export default async function BlogPage({ searchParams }: BlogPageProps) {
           </p>
         </div>
       </div>
-      <div className="gallery">
+      <div className={mystyles.gallery}>
         <Image src="/img10.jpg" alt="description" width={350} height={300} />
         <Image src="/img2.jpg" alt="description" width={350} height={300} />
         <Image src="/img3.jpg" alt="description" width={350} height={300} />
